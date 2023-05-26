@@ -17,7 +17,7 @@ const Body = () => {
             setListOfRestaurants(filteredList);
           }}
         >
-          Top Rated Restaurants
+          Top Rated Restaurantss
         </button>
       </div>
       <div className="res-container">
