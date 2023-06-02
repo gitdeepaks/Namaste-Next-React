@@ -19,18 +19,21 @@ const Body = () => {
     setListOfRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   };
 
-  if (listOfRestaurants.length === 0) {
-    return <Shimmer />;
-  }
+  //conditional Rendering
+  // if (listOfRestaurants.length === 0) {
+  //   return <Shimmer />;
+  // }
 
-  return (
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <button
           className="filter-btn"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
-              (res) => res.data.avgRating > 4.0
+              (res) => res.data.avgRating > 4.1
             );
             setListOfRestaurants(filteredList);
           }}
