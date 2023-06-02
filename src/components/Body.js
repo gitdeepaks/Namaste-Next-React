@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCart from "./RestaurantCart";
-import resObj from "../utils/mockData";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
-  const [listOfRestaurants, setListOfRestaurants] = useState(resObj); //Used to create the state variables
+  const [listOfRestaurants, setListOfRestaurants] = useState([]); //Used to create the state variables
 
   useEffect(() => {
     fetchData();
@@ -15,7 +15,14 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(json);
+    //Optional Chaining
+    setListOfRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   };
+
+  if (listOfRestaurants.length === 0) {
+    return <Shimmer />;
+  }
+
   return (
     <div className="body">
       <div className="filter">
