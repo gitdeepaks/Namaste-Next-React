@@ -10,19 +10,20 @@
   width: 140px;
   cursor: pointer;
 }
+
 .nav-items {
   display: flex;
   padding: 0px 20px;
 }
-.nav-items > ul {
+
+.nav-items ul {
   font-size: 24px;
   display: flex;
-
   cursor: pointer;
   list-style-type: none;
 }
 
-.nav-items > ul > li {
+.nav-items ul li {
   padding: 10px;
   margin: 10px;
 }
@@ -66,7 +67,7 @@
 
 .main-foot {
   display: flex;
-  flex: space-around;
+  justify-content: space-around;
 }
 
 .filter-btn {
@@ -84,12 +85,13 @@
   cursor: pointer;
   font-size: 16px;
 }
+
 .login:hover {
   background-color: #45a049;
 }
 
 .login:focus {
-  background-color: none;
+  outline: none;
 }
 
 .shimmer-card {
