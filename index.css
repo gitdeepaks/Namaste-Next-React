@@ -16,6 +16,10 @@
   padding: 0px 20px;
 }
 
+.filter {
+  display: flex;
+}
+
 .nav-items ul {
   font-size: 24px;
   display: flex;

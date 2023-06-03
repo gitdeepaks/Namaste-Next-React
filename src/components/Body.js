@@ -29,6 +29,16 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input type="text" className="search-box" />
+          <button
+            onClick={() => {
+              // filter the UI and search text
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
