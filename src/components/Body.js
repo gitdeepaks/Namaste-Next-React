@@ -5,6 +5,11 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]); //Used to create the state variables
 
+  const [searchinput, SetSearchInput] = useState(""); //Used to create the state variables
+
+  //when ever state variable update mreact trigger a reconciliation cycle(re-render the component)
+  // console.log("Body Rendered");
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -30,10 +35,24 @@ const Body = () => {
     <div className="body">
       <div className="filter">
         <div className="search">
-          <input type="text" className="search-box" />
+          <input
+            type="text"
+            className="search-box"
+            value={searchinput}
+            onChange={(e) => {
+              SetSearchInput(e.target.value);
+            }}
+          />
           <button
             onClick={() => {
               // filter the UI and search text
+              console.log(searchinput);
+
+              const filterRes = listOfRestaurants.filter((res) => {
+                res.data.name.toLowerCase().includes(searchinput.toLowerCase());
+              });
+
+              setListOfRestaurants(filterRes);
             }}
           >
             Search
