@@ -4,7 +4,7 @@ const heading = React.createElement(
   "Hello World from React"
 );
 
-console.log(heading);
+console.log(heading); //object
 
 const root = ReactDom.createRoot(document.getElementById("root"));
 
